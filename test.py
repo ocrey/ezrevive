@@ -5,7 +5,8 @@
 
 
 import mouse
-import Keyboard
+import keyboard
+import time
 
 
 ## precisa colocar um while pro programa executar até que seja prescionado
@@ -13,15 +14,32 @@ import Keyboard
 
 ## Config cordinate
 
-Def getcordinate():
-    terminate:
-    click_pos = mouse.is_pressed("right")
+def test():
+    log = []
+    getinfo = mouse.is_pressed(button='right') ### essa porra não funciona
+    while getinfo == False:
+        position = mouse.get_position()
+        log.append(getinfo)
+        for l in log:
+            if log[l] ==  True:
+                return
+        else:
 
-    if  click_pos == True:
-        positions = mouse.get_posistion()
-        Print(positions)
+
+            print(getinfo)
+            print(position)
+            time.sleep(3)
 
 
+test()
 
 
-        
+#def firstpoke():
+#    positions = mouse.get_position()
+#    print(positions)
+#    time.sleep(3)
+
+# while click_pos is not True:
+#    if getinfo == True:
+#        sendinfo
+#    else:
